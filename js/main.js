@@ -22,14 +22,13 @@ const app = createApp({
     },
 
     showMails() {
-      this.show = true;
-
       if (this.mails.length < 10) this.generateMail();
+      if ((this.mails.length = 10)) this.show = true;
     },
 
     deleteMails() {
       this.show = false;
-      this.mails.splice(0, 10);
+      this.mails.splice(0, this.mails.length);
     },
   },
 
