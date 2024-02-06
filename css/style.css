@@ -1,0 +1,9 @@
+.container {
+  background-color: aquamarine;
+  padding: 2rem;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}

@@ -21,8 +21,13 @@
     <!-- ## Script Vue3 JS-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <!-- ## Script Axion -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- ## Script Axios -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"
+      integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!-- ## Link My JS -->
     <script type="text/javascript" src="./js/main.js" defer></script>
@@ -30,7 +35,18 @@
   <body>
     <div id="root">
       <div class="container">
-        <h1>{{ message }}</h1>
+        <div class="buttons my-4">
+          <button @click="showMails()" class="btn btn-primary mx-2">
+            Genera mails
+          </button>
+
+          <button @click="deleteMails()" class="btn btn-warning mx-2">
+            Cancella mails
+          </button>
+        </div>
+        <ul v-for="mail in mails" v-show="show">
+          <li>{{ mail }}</li>
+        </ul>
       </div>
     </div>
     <!-- ## Link Bootstrap JS -->
