@@ -5,12 +5,13 @@ const app = createApp({
     return {
       message: "Hello Vue!",
       mails: [],
-      show: false,
     };
   },
 
   methods: {
     generateMail() {
+      this.mails = [];
+
       for (let i = 0; i < 10; i++) {
         axios
           .get("https://flynn.boolean.careers/exercises/api/random/mail")
@@ -21,19 +22,11 @@ const app = createApp({
       }
     },
 
-    showMails() {
-      if (this.mails.length < 10) this.generateMail();
-      if ((this.mails.length = 10)) this.show = true;
-    },
-
     deleteMails() {
-      this.show = false;
-      this.mails.splice(0, this.mails.length);
+      this.mails = [];
     },
   },
 
-  created() {
-    this.generateMail();
-  },
+  created() {},
 });
 app.mount("#root");

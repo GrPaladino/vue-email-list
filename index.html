@@ -36,7 +36,7 @@
     <div id="root">
       <div class="container">
         <div class="buttons my-4">
-          <button @click="showMails()" class="btn btn-primary mx-2">
+          <button @click="generateMail()" class="btn btn-primary mx-2">
             Genera mails
           </button>
 
@@ -44,10 +44,10 @@
             Cancella mails
           </button>
         </div>
-        <ul v-for="mail in mails" v-show="show">
-          <li>{{ mail }}</li>
+        <ul v-if="mails.length == 10">
+          <li v-for="mail in mails">{{ mail }}</li>
         </ul>
-      </div>
+        
     </div>
     <!-- ## Link Bootstrap JS -->
     <script
